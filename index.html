@@ -149,24 +149,24 @@
         .main-content {
             margin-left: 320px;
             flex: 1;
-            min-height: 100vh;
         }
 
         .content-page {
-            display: none;
             padding: 4rem 3rem;
             max-width: 1200px;
             margin: 0 auto;
-            animation: fadeIn 0.5s ease-in;
-        }
-
-        .content-page.active {
-            display: block;
+            min-height: 100vh;
+            scroll-margin-top: 0;
         }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
         }
 
         /* Home Page */
@@ -178,10 +178,6 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-align: center;
-        }
-
-        #home-page.active {
-            display: flex;
         }
 
         .hero-content h1 {
@@ -549,24 +545,24 @@
                 <div class="profile-placeholder">
                     <i class="fas fa-user"></i>
                 </div>
-                <div class="name">Your Name</div>
-                <div class="title">Computer Science Student</div>
+                <div class="name">Devansh Patel</div>
+                <div class="title">Data Analytics Professional</div>
             </div>
 
             <nav class="nav-menu">
-                <a class="nav-item active" onclick="showPage('home', this)">HOME</a>
-                <a class="nav-item" onclick="showPage('about', this)">ABOUT</a>
-                <a class="nav-item" onclick="showPage('portfolio', this)">PORTFOLIO</a>
-                <a class="nav-item" onclick="showPage('experience', this)">EXPERIENCE</a>
-                <a class="nav-item" onclick="showPage('education', this)">EDUCATION</a>
-                <a class="nav-item" onclick="showPage('achievements', this)">ACHIEVEMENTS</a>
-                <a class="nav-item" onclick="showPage('contact', this)">CONTACT</a>
+                <a href="#home-page" class="nav-item active">HOME</a>
+                <a href="#about-page" class="nav-item">ABOUT</a>
+                <a href="#portfolio-page" class="nav-item">PORTFOLIO</a>
+                <a href="#experience-page" class="nav-item">EXPERIENCE</a>
+                <a href="#education-page" class="nav-item">EDUCATION</a>
+                <a href="#achievements-page" class="nav-item">ACHIEVEMENTS</a>
+                <a href="#contact-page" class="nav-item">CONTACT</a>
             </nav>
 
             <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/in/dewanshpatel" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/patel7d3" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="https://public.tableau.com/app/profile/dewansh.patel" target="_blank" class="social-link"><i class="fas fa-chart-bar"></i></a>
             </div>
         </div>
 
@@ -575,8 +571,8 @@
             <!-- Home Page -->
             <div id="home-page" class="content-page active">
                 <div class="hero-content">
-                    <h1>Hi, I'm Your Name</h1>
-                    <p class="subtitle">Computer Science Graduate Student & AI Researcher</p>
+                    <h1>Hi, I'm Devansh Patel</h1>
+                    <p class="subtitle">Data Analytics Professional | Business Intelligence Expert</p>
                 </div>
             </div>
 
@@ -586,9 +582,9 @@
                 <p class="page-subtitle">Who Am I?</p>
                 
                 <div class="about-text">
-                    <p>I am a passionate Computer Science graduate student specializing in Artificial Intelligence and Machine Learning. Currently pursuing my Master's degree, I have developed expertise in multi-agent systems, natural language processing, and research automation.</p>
+                    <p>Data Analytics Professional with 5+ years of experience delivering business impact through advanced analytics, forecasting, and machine learning in Retail and Technology. Proven ability to improve revenue, reduce costs, and optimize operations by developing predictive models, building BI dashboards, and aligning stakeholders around data-driven strategies.</p>
                     
-                    <p>My academic journey has been enriched by hands-on experience with cutting-edge technologies including LangChain, OpenAI APIs, and vector databases. I am particularly interested in developing AI systems that can automate complex research tasks and enhance human productivity.</p>
+                    <p>Currently pursuing a Master of Science in Business Analytics at the University of Cincinnati's Carl H. Lindner College of Business, I specialize in leveraging data science, machine learning, and business intelligence to solve complex business problems and drive strategic decision-making.</p>
                 </div>
 
                 <h3 style="margin: 2rem 0 1.5rem; color: #2c3e50;">Technical Skills</h3>
@@ -596,22 +592,22 @@
                     <div class="skill-item">
                         <i class="fas fa-code"></i>
                         <h4>Programming</h4>
-                        <p>Python, JavaScript, Java, C++</p>
+                        <p>Python, R, SQL</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <h4>BI & Visualization</h4>
+                        <p>Power BI, Tableau, Databricks</p>
                     </div>
                     <div class="skill-item">
                         <i class="fas fa-brain"></i>
-                        <h4>AI/ML</h4>
-                        <p>LangChain, OpenAI, TensorFlow</p>
+                        <h4>ML & AI</h4>
+                        <p>scikit-learn, TensorFlow, LangChain</p>
                     </div>
                     <div class="skill-item">
                         <i class="fas fa-database"></i>
-                        <h4>Databases</h4>
-                        <p>PostgreSQL, MongoDB, FAISS</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-globe"></i>
-                        <h4>Web Dev</h4>
-                        <p>React, Node.js, Streamlit</p>
+                        <h4>Data Platforms</h4>
+                        <p>Azure, Snowflake, MLflow</p>
                     </div>
                 </div>
             </div>
@@ -627,31 +623,31 @@
                             <i class="fas fa-robot"></i>
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">AI Research Assistant</h3>
-                            <p class="project-description">Multi-agent system using LangChain and OpenAI for automated academic research. Features quantized FAISS vector database and intelligent paper synthesis.</p>
-                            <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                            <h3 class="project-title">AI-Powered Multi-Agent Research Assistant</h3>
+                            <p class="project-description">Engineered an LLM-driven research assistant using quantized FAISS vector database and RAG, eliminating 40+ hours of manual research monthly. Implemented context-aware multi-agent architecture with LangChain and OpenAI.</p>
+                            <a href="https://github.com/patel7d3" class="project-link" target="_blank">View on GitHub <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
                     <div class="project-card">
                         <div class="project-image">
-                            <i class="fas fa-chart-line"></i>
+                            <i class="fas fa-truck"></i>
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Data Analytics Platform</h3>
-                            <p class="project-description">Full-stack web application for data visualization and analysis with ML integration. Built with React and Python backend.</p>
-                            <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                            <h3 class="project-title">Supply Chain Optimization Model</h3>
+                            <p class="project-description">Designed a linear programming model using Python and PuLP to minimize logistics costs across multi-warehouse retail network. Cut simulated transportation costs by 8% with Tableau visualization.</p>
+                            <a href="https://github.com/patel7d3" class="project-link" target="_blank">View on GitHub <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
                     <div class="project-card">
                         <div class="project-image">
-                            <i class="fas fa-mobile-alt"></i>
+                            <i class="fas fa-shield-alt"></i>
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Smart Mobile App</h3>
-                            <p class="project-description">Cross-platform application with AI-powered features implementing computer vision and NLP capabilities.</p>
-                            <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                            <h3 class="project-title">Credit Card Fraud Detection</h3>
+                            <p class="project-description">Built XGBoost fraud detection model using PCA and GridSearchCV hyperparameter tuning. Achieved 0.92 AUC score, 0.90 precision, and 0.82 recall on credit card transactions dataset in R.</p>
+                            <a href="https://github.com/patel7d3" class="project-link" target="_blank">View on GitHub <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -666,12 +662,26 @@
                     <div class="timeline-item">
                         <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
                         <div class="timeline-content">
-                            <h3>Research Assistant - University Lab</h3>
-                            <p class="timeline-date">2023 - Present</p>
+                            <h3>Graduate Consultant - Neo Initiative</h3>
+                            <p class="timeline-date">Aug 2024 - Dec 2024 | Cincinnati, Ohio</p>
                             <ul>
-                                <li>Working on AI-powered research automation systems</li>
-                                <li>Developing multi-agent architectures for academic paper analysis</li>
-                                <li>Published research on intelligent synthesis methods</li>
+                                <li>Implemented Generative AI solutions for market research at VOYC, integrating multiple tools and conducting training sessions that streamlined processes and lowered research costs by 10%</li>
+                                <li>Developed and deployed a ChatGPT-4 chatbot that automated market research analysis, cutting manual work by 40% and enabling faster, data-driven decision-making</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="timeline-content">
+                            <h3>Senior Business Analyst - Webcraft IT</h3>
+                            <p class="timeline-date">Aug 2021 - Mar 2024 | Indore, India</p>
+                            <ul>
+                                <li>Led 3 junior analysts and partnered with stakeholders across multiple departments to streamline reporting processes, reducing turnaround time by 30%</li>
+                                <li>Drove 15% sales revenue growth by leveraging K-Means clustering for customer segmentation, enabling targeted campaigns that increased conversion rates by 25%</li>
+                                <li>Developed a predictive churn model using Markov Chains and logistic regression, reducing customer loss by 20% and saving $2M in annual revenue</li>
+                                <li>Built real-time Power BI dashboards for Cisco contact-center metrics, uncovering inefficiencies that saved $150K annually and increased CSAT by 26%</li>
+                                <li>Developed automated time series forecasting system using ARIMA for 200+ SKUs with 90% accuracy, reducing stockouts by 30%</li>
                             </ul>
                         </div>
                     </div>
@@ -679,25 +689,12 @@
                     <div class="timeline-item">
                         <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
                         <div class="timeline-content">
-                            <h3>Software Development Intern - Tech Company</h3>
-                            <p class="timeline-date">Summer 2023</p>
+                            <h3>Business Analyst - Webcraft IT</h3>
+                            <p class="timeline-date">July 2019 - July 2021 | Indore, India</p>
                             <ul>
-                                <li>Developed web applications using modern JavaScript frameworks</li>
-                                <li>Contributed to backend API development</li>
-                                <li>Collaborated with cross-functional teams</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                        <div class="timeline-content">
-                            <h3>Teaching Assistant - Computer Science Department</h3>
-                            <p class="timeline-date">2022 - 2023</p>
-                            <ul>
-                                <li>Assisted in teaching data structures and algorithms</li>
-                                <li>Helped students with programming assignments</li>
-                                <li>Conducted lab sessions and office hours</li>
+                                <li>Delivered $200K in annual savings by analyzing CRM data and running A/B tests to optimize the loyalty program, reducing low-value redemptions by 70%</li>
+                                <li>Automated 15+ executive reporting workflows using SQL and Power BI, reducing board report delivery time from 3 days to same day</li>
+                                <li>Performed market basket analysis to uncover product associations, generating $250K in cross-sell revenue and raising average transaction value by $2.50</li>
                             </ul>
                         </div>
                     </div>
@@ -713,22 +710,19 @@
                     <div class="timeline-item">
                         <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
                         <div class="timeline-content">
-                            <h3>Master of Science in Computer Science</h3>
-                            <p class="timeline-date">University Name | 2023 - 2025</p>
-                            <p>Focus on Artificial Intelligence and Machine Learning</p>
-                            <p><strong>GPA:</strong> 3.8/4.0</p>
-                            <p><strong>Relevant Courses:</strong> Machine Learning, Deep Learning, Natural Language Processing, Computer Vision</p>
+                            <h3>Master of Science in Business Analytics</h3>
+                            <p class="timeline-date">University of Cincinnati, Carl H. Lindner College of Business | Aug 2024 - Aug 2025</p>
+                            <p><strong>Location:</strong> Cincinnati, Ohio</p>
+                            <p><strong>Coursework:</strong> Data Mining, Statistical Modeling, Time Series and Forecasting Methods, Supply Chain Strategy, Governance of AI/ML Systems, Generative AI for Business, Optimization, Simulation Modeling, Data Warehousing and BI</p>
                         </div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="timeline-icon"><i class="fas fa-university"></i></div>
                         <div class="timeline-content">
-                            <h3>Bachelor of Science in Computer Science</h3>
-                            <p class="timeline-date">University Name | 2019 - 2023</p>
-                            <p>Graduated Magna Cum Laude</p>
-                            <p><strong>GPA:</strong> 3.7/4.0</p>
-                            <p><strong>Activities:</strong> Dean's List, Programming Club President, Hackathon Winner</p>
+                            <h3>Bachelor of Technology in Material Science and Metallurgical Engineering</h3>
+                            <p class="timeline-date">National Institute of Technology | July 2015 - June 2019</p>
+                            <p><strong>Location:</strong> Bhopal, India</p>
                         </div>
                     </div>
                 </div>
@@ -736,34 +730,43 @@
 
             <!-- Achievements Page -->
             <div id="achievements-page" class="content-page">
-                <h2 class="page-title">Achievements</h2>
-                <p class="page-subtitle">Awards & Recognition</p>
+                <h2 class="page-title">Key Achievements</h2>
+                <p class="page-subtitle">Measurable Business Impact</p>
                 
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-icon"><i class="fas fa-trophy"></i></div>
                         <div class="timeline-content">
-                            <h3>University AI Hackathon - Winner</h3>
-                            <p class="timeline-date">2024</p>
-                            <p>Won first place among 50+ teams for developing an innovative AI-powered research assistant</p>
+                            <h3>$2M Revenue Saved Through Churn Prediction</h3>
+                            <p class="timeline-date">Webcraft IT - 2023</p>
+                            <p>Developed predictive churn model using Markov Chains and logistic regression, enabling targeted retention strategies that reduced customer loss by 20% and saved $2M in annual revenue.</p>
                         </div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-icon"><i class="fas fa-award"></i></div>
+                        <div class="timeline-icon"><i class="fas fa-chart-line"></i></div>
                         <div class="timeline-content">
-                            <h3>Academic Excellence Scholarship</h3>
-                            <p class="timeline-date">2023</p>
-                            <p>Awarded for outstanding academic performance and research contributions</p>
+                            <h3>15% Sales Revenue Growth</h3>
+                            <p class="timeline-date">Webcraft IT - 2022</p>
+                            <p>Leveraged K-Means clustering for customer segmentation, enabling targeted campaigns that increased conversion rates by 25% and drove 15% overall revenue growth.</p>
                         </div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="timeline-icon"><i class="fas fa-medal"></i></div>
+                        <div class="timeline-icon"><i class="fas fa-robot"></i></div>
                         <div class="timeline-content">
-                            <h3>Dean's List</h3>
-                            <p class="timeline-date">2022 - 2023</p>
-                            <p>Recognized for 4 consecutive semesters for maintaining high GPA</p>
+                            <h3>40+ Hours Saved Monthly with AI Research Assistant</h3>
+                            <p class="timeline-date">University of Cincinnati - 2025</p>
+                            <p>Engineered LLM-driven research assistant with quantized FAISS and RAG, eliminating 40+ hours of manual research monthly through automated paper discovery and synthesis.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-dollar-sign"></i></div>
+                        <div class="timeline-content">
+                            <h3>$200K Annual Savings from Loyalty Program Optimization</h3>
+                            <p class="timeline-date">Webcraft IT - 2021</p>
+                            <p>Analyzed CRM data and ran A/B tests to optimize loyalty program, reducing low-value redemptions by 70% and shifting customer activity toward higher-margin products.</p>
                         </div>
                     </div>
                 </div>
@@ -782,7 +785,7 @@
                             </div>
                             <div>
                                 <h4>Email</h4>
-                                <p>your.email@example.com</p>
+                                <p>patel7d3@mail.uc.edu</p>
                             </div>
                         </div>
 
@@ -792,7 +795,7 @@
                             </div>
                             <div>
                                 <h4>Phone</h4>
-                                <p>+1 (555) 123-4567</p>
+                                <p>513-263-0806</p>
                             </div>
                         </div>
 
@@ -802,7 +805,7 @@
                             </div>
                             <div>
                                 <h4>Location</h4>
-                                <p>Your City, State</p>
+                                <p>Cincinnati, Ohio</p>
                             </div>
                         </div>
                     </div>
@@ -828,17 +831,32 @@
     </div>
 
     <script>
-        function showPage(pageId, element) {
-            const pages = document.querySelectorAll('.content-page');
-            pages.forEach(page => page.classList.remove('active'));
-            
+        // Smooth scroll behavior is handled by CSS
+        
+        // Update active nav item on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.content-page');
             const navItems = document.querySelectorAll('.nav-item');
-            navItems.forEach(item => item.classList.remove('active'));
             
-            document.getElementById(pageId + '-page').classList.add('active');
-            element.classList.add('active');
-        }
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + current) {
+                    item.classList.add('active');
+                }
+            });
+        });
 
+        // Handle contact form submission
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your message! I will get back to you soon.');
